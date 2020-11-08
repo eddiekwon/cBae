@@ -27,11 +27,44 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Scf-Vf-vNF">
                                 <rect key="frame" x="0.0" y="154" width="414" height="708"/>
                                 <subviews>
+                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f8Y-4G-ReV">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="168"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uLD-nM-RaL">
+                                                <rect key="frame" x="0.0" y="0.0" width="1242" height="168"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10개의 View가 모두 스택 뷰로 들어가 정상적으로 스크롤이 되는 것을 확인할 수 있습니다." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GW7-T3-D9I">
+                                                        <rect key="frame" x="30" y="74" width="597" height="20.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstItem="GW7-T3-D9I" firstAttribute="centerY" secondItem="uLD-nM-RaL" secondAttribute="centerY" id="HfW-2N-ytc"/>
+                                                    <constraint firstItem="GW7-T3-D9I" firstAttribute="leading" secondItem="uLD-nM-RaL" secondAttribute="leading" constant="30" id="rOK-rU-t7s"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="uLD-nM-RaL" firstAttribute="height" secondItem="uW6-gG-rNp" secondAttribute="height" id="DNc-Vt-Yhk"/>
+                                            <constraint firstItem="uLD-nM-RaL" firstAttribute="bottom" secondItem="Lza-zF-ay0" secondAttribute="bottom" id="Yfa-pe-hMc"/>
+                                            <constraint firstItem="uLD-nM-RaL" firstAttribute="width" secondItem="uW6-gG-rNp" secondAttribute="width" multiplier="3" id="hAX-NN-vgb"/>
+                                            <constraint firstItem="uLD-nM-RaL" firstAttribute="top" secondItem="Lza-zF-ay0" secondAttribute="top" id="lCS-Gg-796"/>
+                                            <constraint firstItem="uLD-nM-RaL" firstAttribute="trailing" secondItem="Lza-zF-ay0" secondAttribute="trailing" id="ucC-Nw-P8L"/>
+                                            <constraint firstAttribute="height" constant="168" id="wiM-Ve-ola"/>
+                                            <constraint firstItem="uLD-nM-RaL" firstAttribute="leading" secondItem="Lza-zF-ay0" secondAttribute="leading" id="wne-lg-Lge"/>
+                                        </constraints>
+                                        <viewLayoutGuide key="contentLayoutGuide" id="Lza-zF-ay0"/>
+                                        <viewLayoutGuide key="frameLayoutGuide" id="uW6-gG-rNp"/>
+                                    </scrollView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="s1Z-cT-qZT">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="646.5"/>
+                                        <rect key="frame" x="0.0" y="100" width="414" height="646.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fyt-XG-Wpa">
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="20.5"/>
+                                                <color key="backgroundColor" systemColor="systemTealColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -59,12 +92,16 @@ The central notion of a UIScrollView object (or, simply, a scroll view) is that 
                                         </subviews>
                                     </stackView>
                                 </subviews>
+                                <color key="backgroundColor" systemColor="systemPurpleColor"/>
                                 <constraints>
                                     <constraint firstItem="s1Z-cT-qZT" firstAttribute="leading" secondItem="uui-JM-ED6" secondAttribute="leading" id="E8N-AQ-zYc"/>
+                                    <constraint firstItem="f8Y-4G-ReV" firstAttribute="top" secondItem="uui-JM-ED6" secondAttribute="top" id="R7f-cB-AJE"/>
                                     <constraint firstItem="s1Z-cT-qZT" firstAttribute="trailing" secondItem="uui-JM-ED6" secondAttribute="trailing" id="RTJ-WX-u7N"/>
                                     <constraint firstItem="s1Z-cT-qZT" firstAttribute="width" secondItem="5v9-AD-lo7" secondAttribute="width" id="XMs-XZ-hjg"/>
                                     <constraint firstItem="s1Z-cT-qZT" firstAttribute="bottom" secondItem="uui-JM-ED6" secondAttribute="bottom" id="XYj-Ur-Ovf"/>
-                                    <constraint firstItem="s1Z-cT-qZT" firstAttribute="top" secondItem="uui-JM-ED6" secondAttribute="top" id="wDP-dJ-o94"/>
+                                    <constraint firstItem="uui-JM-ED6" firstAttribute="trailing" secondItem="f8Y-4G-ReV" secondAttribute="trailing" id="Z4T-fc-746"/>
+                                    <constraint firstItem="f8Y-4G-ReV" firstAttribute="leading" secondItem="uui-JM-ED6" secondAttribute="leading" id="eI3-rB-Yt9"/>
+                                    <constraint firstItem="s1Z-cT-qZT" firstAttribute="top" secondItem="uui-JM-ED6" secondAttribute="top" constant="100" id="wDP-dJ-o94"/>
                                     <constraint firstItem="s1Z-cT-qZT" firstAttribute="height" secondItem="5v9-AD-lo7" secondAttribute="height" priority="250" id="yrW-kI-eXf"/>
                                 </constraints>
                                 <viewLayoutGuide key="contentLayoutGuide" id="uui-JM-ED6"/>
@@ -95,6 +132,12 @@ The central notion of a UIScrollView object (or, simply, a scroll view) is that 
         </systemColor>
         <systemColor name="systemOrangeColor">
             <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemPurpleColor">
+            <color red="0.68627450980392157" green="0.32156862745098042" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemTealColor">
+            <color red="0.35294117647058826" green="0.78431372549019607" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
