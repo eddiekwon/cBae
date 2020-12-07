@@ -17,14 +17,42 @@ import Alamofire
 private let dataSource = [ "About", "event","ARS", "Preference", "version info"]
 
 class SettingViewController: UIViewController {
+    let reqUrl = "https://api.unsplash.com/photos"
+            
+            let parameters: Parameters = [
+                "client_id": "sssssss",
+                "page": "3",
+                "per_page": "20"
+            ]
+    
+    let apiKeys = "pfw8sHFDESC7D25HxvwU9cCoL-izXoJuF0YoQlgMUfs"
    
     @IBOutlet var tableView: UITableView!
      
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        fetch()
         tableView.dataSource = self
     }
+    
+    func fetch() {
+        let response = AF.request(reqUrl, method: .get, parameters: parameters, encoding: URLEncoding.default, headers: nil, interceptor: nil, requestModifier: nil)
+        response.responseJSON { (response) in
+            guard let dataOfResponse = response.data else {
+                return
+            }
+            do {
+                let final = try JSONDecoder().decode(UnsplashModel.self, from: dataOfResponse)
+                
+                print("final:\(final)")
+                    // completion(final)
+            } catch let error {
+                print("decoding err:\(error.localizedDescription)")
+            }
+        }
+    }
+    
+    
     
     func setupTableView(){
          
