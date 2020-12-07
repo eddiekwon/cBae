@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 /*
  
  다운로드 https://developer.apple.com/sf-symbols/
@@ -23,8 +24,8 @@ class SettingViewController: UIViewController {
         super.viewDidLoad()
         
         tableView.dataSource = self
-    }
     
+    }
     func setupTableView(){
          
     }

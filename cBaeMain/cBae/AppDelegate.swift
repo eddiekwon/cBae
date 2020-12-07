@@ -4,7 +4,14 @@
 //
 //  Created by muzna on 2020/11/08.
 //
+/*
+ add SecureFile.swift
+ then add as follows:
+ 
+ let secureId = "#YOUR Security id"
 
+ 
+ */
 import UIKit
 
 @main

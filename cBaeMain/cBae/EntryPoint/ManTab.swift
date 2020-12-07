@@ -21,7 +21,10 @@ class MainTabBarController: UITabBarController, PhotoPickable {
    
     let vcLeft = HomeViewController.storyboardViewController()
     let vcRight = SettingViewController.storyboardViewController()
-    let vcCenterFaked = UIViewController()
+    
+    //let vcXib = XibViewControoler.storyboardViewController()
+    let xxx = XibViewController.storyboardViewController()
+    let vcCenterFaked = xxx //UIViewController()
     
     vcLeft.tabBarItem = UITabBarItem(tabBarSystemItem: .history, tag: 0)
     vcRight.tabBarItem = UITabBarItem(tabBarSystemItem: .bookmarks, tag: 0)
@@ -36,10 +39,10 @@ extension MainTabBarController:UITabBarControllerDelegate{
   func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
     
     // 가운데 Tab을 선택하면 카메라를 호출하게 이벤트를 가로챔.
-    if viewControllers?.firstIndex(of: viewController) == 1 { // 가운데 뷰 인덱스.
-      //showCamera()
-      return false
-    }
+//    if viewControllers?.firstIndex(of: viewController) == 1 { // 가운데 뷰 인덱스.
+//      //showCamera()
+//      return false
+//    }
     return true
   }
 }
