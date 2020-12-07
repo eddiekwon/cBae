@@ -1,0 +1,6 @@
+framework module Pods_cBae {
+  umbrella header "Pods-cBae-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 /*
  
  다운로드 https://developer.apple.com/sf-symbols/
