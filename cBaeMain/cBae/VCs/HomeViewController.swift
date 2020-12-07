@@ -8,6 +8,7 @@
 
 import UIKit
 /*
+ ref: https://corykim0829.github.io//ios/UIScrollView-with-storyboard/#\
  
  step1:
      스크롤뷰에서 처음 만나게 되는 경고
