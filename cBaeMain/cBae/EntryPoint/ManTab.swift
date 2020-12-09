@@ -9,8 +9,7 @@ import UIKit
 
 class MainTabBarController: UITabBarController, PhotoPickable {
   var pickerController: UIImagePickerController?
-  
- 
+   
   override func viewDidLoad() {
     super.viewDidLoad()
     initSubViewControllers()
