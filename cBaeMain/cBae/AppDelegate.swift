@@ -6,7 +6,7 @@
 //
 /*
  add SecureFile.swift
- then add as follows:
+ then add in root folder(that is the same level on  README.md is exist) as follows:
  
  let secureId = "#YOUR Security id"
 
