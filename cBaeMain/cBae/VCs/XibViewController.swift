@@ -20,7 +20,6 @@ class XibViewController: UIViewController {
         col.register(UINib(nibName: "StarCell", bundle: nil), forCellWithReuseIdentifier: "scell")
         
         col.dataSource = self
-        col.delegate = self
         
         fetch()
     }
@@ -74,10 +73,10 @@ class XibViewController: UIViewController {
          flowLayout.minimumLineSpacing = 0// (horizontal 경우 각각 cell간의 좌우 간격, veritcal인 경우 상하간격).
          flowLayout.minimumInteritemSpacing = 0 // hori 경우 상하간격, verti 경우 좌우간격.
          //flowLayout.sectionInset = UIEdgeInsets(top: 2, left: 20, bottom: 5, right: 20) //Section간의 간역설정시 필요.
-         
-         let cv = UICollectionView(frame: .init(x: 0, y: 0, width: 100, height: 100), collectionViewLayout: flowLayout)
-         flowLayout.itemSize = CGSize(width: 100, height: 100)
-         
+          // 오토레이아웃 사용 코드
+        let cv = UICollectionView(frame: .zero, collectionViewLayout: flowLayout)
+        // item size
+         flowLayout.itemSize = CGSize(width: UIScreen.main.bounds.width / 2, height: UIScreen.main.bounds.width / 2)
          cv.translatesAutoresizingMaskIntoConstraints = false
          cv.backgroundColor = .red
          return cv
@@ -101,7 +100,7 @@ extension XibViewController {
 extension XibViewController: UICollectionViewDataSource {
  
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        return 10
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -114,7 +113,7 @@ extension XibViewController: UICollectionViewDataSource {
     }
 }
 
-extension XibViewController: UICollectionViewDelegate{}
+
 
 //셀의 사이즈임.
 extension XibViewController: UICollectionViewDelegateFlowLayout {
