@@ -69,7 +69,7 @@ class XibViewController: UIViewController {
 
      let col: UICollectionView = {
         let flowLayout = UICollectionViewFlowLayout()
-         flowLayout.scrollDirection = .horizontal
+         flowLayout.scrollDirection = .vertical
          flowLayout.minimumLineSpacing = 0// (horizontal 경우 각각 cell간의 좌우 간격, veritcal인 경우 상하간격).
          flowLayout.minimumInteritemSpacing = 0 // hori 경우 상하간격, verti 경우 좌우간격.
          //flowLayout.sectionInset = UIEdgeInsets(top: 2, left: 20, bottom: 5, right: 20) //Section간의 간역설정시 필요.
@@ -92,7 +92,7 @@ extension XibViewController {
             col.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             col.centerYAnchor.constraint(equalTo: view.centerYAnchor),
             col.widthAnchor.constraint(equalTo: view.safeAreaLayoutGuide.widthAnchor),
-            col.heightAnchor.constraint(equalToConstant: 300)
+            col.heightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.heightAnchor)
         ])
     }
 }
