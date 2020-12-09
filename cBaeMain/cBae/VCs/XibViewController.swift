@@ -20,14 +20,13 @@ class XibViewController: UIViewController {
         col.register(UINib(nibName: "StarCell", bundle: nil), forCellWithReuseIdentifier: "scell")
         
         col.dataSource = self
-        col.delegate = self
-        
+      
         fetch()
     }
     func fetch() {
         
         let reqUrl = "https://api.unsplash.com/photos"
-        
+        //let secureId = "asdfasdfasdfasdfasdf"
         let parameters: Parameters = [
             "client_id": secureId, // security , 씨케
             "page": "3",
@@ -116,10 +115,3 @@ extension XibViewController: UICollectionViewDataSource {
 
 extension XibViewController: UICollectionViewDelegate{}
 
-//셀의 사이즈임.
-extension XibViewController: UICollectionViewDelegateFlowLayout {
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: view.frame.width - 80, height: view.frame.height)
-//        return CGSize(width: 100, height: view.frame.height) -- 요렇게 하면 작은 사이즈로 횡스크롤
-    }
-}

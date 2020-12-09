@@ -20,10 +20,7 @@ class MainTabBarController: UITabBarController, PhotoPickable {
    
     let vcLeft = HomeViewController.storyboardViewController()
     let vcRight = SettingViewController.storyboardViewController()
-    
-    //let vcXib = XibViewControoler.storyboardViewController()
-    let xxx = XibViewController.storyboardViewController()
-    let vcCenterFaked = xxx //UIViewController()
+    let vcCenterFaked = FoodListController.storyboardViewController()
     
     vcLeft.tabBarItem = UITabBarItem(tabBarSystemItem: .history, tag: 0)
     vcRight.tabBarItem = UITabBarItem(tabBarSystemItem: .bookmarks, tag: 0)
